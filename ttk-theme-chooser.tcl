@@ -18,16 +18,18 @@ proc on_select_theme {new_theme} {
 
 proc show_dialog {} {
     global theme_selected
-    pack [ttk::frame .frame] -padx 5 -pady 5 -fill both
-    grid [ttk::frame .frame.frm] -row 0 -column 0 -columnspan 3
+    pack [ttk::frame .frame] -fill both
+    
+    grid [ttk::frame .frame.frm] -row 0 -column 0 -columnspan 3 -padx 10 -pady 10
     grid [ttk::label .frame.frm.themesLbl -text {Ttk theme: }] -row 0 -column 0
     grid [ttk::combobox .frame.frm.themesCmb -state readonly] -row 0 -column 1
     bind .frame.frm.themesCmb <<ComboboxSelected>> {on_select_theme [.frame.frm.themesCmb get]}
     
     .frame.frm.themesCmb configure -values [ttk::themes]
     .frame.frm.themesCmb set $theme_selected
-    grid [ttk::button .frame.cancelBut -text "Cancel" -command "destroy ."] -row 1 -column 1
-    grid [ttk::button .frame.set_defaultBut -default active -text "Set as default" -command {set_default_theme_to $theme_selected}] -row 1 -column 2
+    grid [ttk::button .frame.cancelBut -text "Cancel" -command "destroy ."] -row 1 -column 1 -padx 10 -pady 10
+    grid [ttk::button .frame.set_defaultBut -default active -text "Set as default" -command {set_default_theme_to $theme_selected}] -row 1 -column 2 -padx 10 -pady 10
+
     focus .frame.frm.themesCmb
     image create photo applicationIcon -file [file join [file dirname [info script]] "tcl.png"];wm iconphoto . -default applicationIcon
     wm title . "TTK Theme chooser"
