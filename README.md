@@ -5,7 +5,7 @@ TK 8.5 added a fabulous new feature (and set of procs) called TTK which give a m
 
 Here it is, TTK theme chooser is just a little window to choose and set the default TTK theme on linux.
 
-![screenshot](capture.png "screenshot of TTK theme chooser")
+![screenshot](capture.gif "screenshot of TTK theme chooser")
 
 ## Installation
 
