@@ -1,7 +1,7 @@
 bin_SCRIPTS = ttk-theme-chooser
 ttk-theme-chooser:
 	echo "#! /bin/sh" >$@
-	echo '`dirname $$0`/../share/ttk-theme-chooser/ttk-theme-chooser.tcl' >>$@
+	echo 'tclsh `dirname $$0`/../share/ttk-theme-chooser/ttk-theme-chooser.tcl' >>$@
 	chmod ugo+x $@
 appdir = $(prefix)/share/applications
 app_DATA = ttk-theme-chooser.desktop
