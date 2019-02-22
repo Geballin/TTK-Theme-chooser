@@ -18,7 +18,7 @@ proc on_select_theme {new_theme} {
 
 proc show_dialog {} {
     global theme_selected
-    pack [ttk::frame .frame] -fill both
+    pack [ttk::frame .frame] -fill both -expand 1
     
     grid [ttk::frame .frame.frm] -row 0 -column 0 -columnspan 3 -padx 10 -pady 10
     grid [ttk::label .frame.frm.themesLbl -text {Ttk theme: }] -row 0 -column 0
