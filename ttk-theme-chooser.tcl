@@ -33,6 +33,9 @@ proc show_dialog {} {
     focus .frame.frm.themesCmb
     image create photo applicationIcon -file [file join [file dirname [info script]] "tcl.png"];wm iconphoto . -default applicationIcon
     wm title . "TTK Theme chooser"
+    update
+    wm maxsize . [winfo width .] [winfo height .]
+    wm minsize . [winfo width .] [winfo height .] 
     tkwait window .
 }
 
