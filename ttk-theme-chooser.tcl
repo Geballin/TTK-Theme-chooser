@@ -25,7 +25,7 @@ proc show_dialog {} {
     grid [ttk::combobox .frame.frm.themesCmb -state readonly] -row 0 -column 1
     bind .frame.frm.themesCmb <<ComboboxSelected>> {on_select_theme [.frame.frm.themesCmb get]}
     
-    .frame.frm.themesCmb configure -values [ttk::themes]
+    .frame.frm.themesCmb configure -values [lsort -ascii [ttk::themes]]
     .frame.frm.themesCmb set $theme_selected
     grid [ttk::button .frame.cancelBut -text "Cancel" -command "destroy ."] -row 1 -column 1 -padx 10 -pady 10
     grid [ttk::button .frame.set_defaultBut -default active -text "Set as default" -command {set_default_theme_to $theme_selected}] -row 1 -column 2 -padx 10 -pady 10
