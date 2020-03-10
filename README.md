@@ -14,6 +14,8 @@ Here it is, TTK theme chooser is just a little window to choose and set the defa
     make install
 (sudo make install if you're not root)
 
+**For Arch Linux users, [package ttk-theme-chooser is available on the AUR](https://aur.archlinux.org/packages/ttk-theme-chooser/)**
+
 Installation is optionnal, you can simply do `tclsh ttk-theme-chooser.tcl` too.
 
 ## Usage
