@@ -30,6 +30,9 @@ proc show_dialog {} {
     grid [ttk::button .frame.cancelBut -text "Cancel" -command "destroy ."] -row 1 -column 1 -padx 10 -pady 10
     grid [ttk::button .frame.set_defaultBut -default active -text "Set as default" -command {set_default_theme_to $theme_selected}] -row 1 -column 2 -padx 10 -pady 10
 
+    bind . <Escape> {exit}
+    bind . <Return> {set_default_theme_to $theme_selected}
+
     focus .frame.frm.themesCmb
     image create photo applicationIcon -file [file join [file dirname [info script]] "tcl.png"];wm iconphoto . -default applicationIcon
     wm title . "TTK Theme chooser"
