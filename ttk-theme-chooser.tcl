@@ -62,8 +62,9 @@ proc set_default_theme_to {themename} {
 	set lines [lmap line [split [fileutil::cat $X_RESOURCES_FILENAME] "\n"] {
 	    if {[string first "TkTheme" $line] == -1} {
 		set line
+	    } else {
+		continue
 	    }
-	    continue
 	}]
     }
     lappend lines "*TkTheme: $themename\n"
